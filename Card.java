@@ -10,6 +10,6 @@ public class Card {
     }
 
     public void print() {
-        System.out.println("The " + rank.label + " of " + suit.label);
+        System.out.println("The " + this.rank.label + " of " + this.suit.label);
     }
 }
