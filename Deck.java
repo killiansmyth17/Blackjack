@@ -1,6 +1,12 @@
 package blackjack;
 
-public class Deck {
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
+import blackjack.Card;
+import blackjack.Suit;
+import blackjack.Rank;
+
     //figure out good way to store deck (and a better way to write notes)
 
     //needs: 
@@ -34,4 +40,50 @@ public class Deck {
                 // - probably negligible saving and confusing for maintenance (sounds REALLY cool though)
             // - wait this method would be part of the blackjack class, not deck class
 
+public class Deck {
+    private List<Card> deck;
+    
+    public Deck() {
+        Suit[] allSuits = Suit.values();
+        Rank[] allRanks = Rank.values();
+        this.deck = new ArrayList<Card>(allSuits.length * allRanks.length);
+
+        for(Suit suit : allSuits) {
+            for(Rank rank : allRanks) {
+                this.deck.add(new Card(suit, rank));
+            }
+        }
+    }
+
+    public Card draw() {
+        //top of deck is end of ArrayList
+        int last = this.getSize()-1;
+        Card card = this.getCard(last);
+        this.removeCard(last);
+
+        return card;
+    }
+
+    public int getSize() {
+        return this.deck.size();
+    }
+
+    public Card getCard(int i) {
+        return this.deck.get(i);
+    }
+
+    public void removeCard(int i) {
+        this.deck.remove(i);
+    }
+
+    public String toString() {
+        String deckString = "";
+        int size = this.getSize();
+        for(int i = 0; i<size-1; i++) {
+            deckString+=this.getCard(i).toString() + "\n";
+        }
+        deckString += this.getCard(size-1).toString();
+
+        return deckString;
+    }
 }

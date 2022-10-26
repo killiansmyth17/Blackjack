@@ -1,10 +1,13 @@
+import blackjack.Deck;
 import blackjack.Card;
-import blackjack.Suit;
-import blackjack.Rank;
 
 public class Blackjack {
     public static void main(String args[]) {
-        Card card = new Card(Suit.HEARTS, Rank.QUEEN);
-        card.print();
+        Deck deck = new Deck();
+        Card card = deck.draw();
+
+        System.out.println("Drew card: " + card.toString());
+        System.out.println("\nDeck:");
+        System.out.println(deck.toString());
     }
 }

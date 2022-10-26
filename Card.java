@@ -9,7 +9,19 @@ public class Card {
         this.rank = rank;
     }
 
-    public void print() {
-        System.out.println("The " + this.rank.label + " of " + this.suit.label);
+    public String getSuit() {
+        return this.suit.label;
+    }
+
+    public String getRank() {
+        return this.rank.label;
+    }
+
+    public int getValue() {
+        return this.rank.value;
+    }
+
+    public String toString() {
+        return "The " + this.getRank() + " of " + this.getSuit();
     }
 }
