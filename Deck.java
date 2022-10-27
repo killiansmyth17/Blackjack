@@ -1,8 +1,8 @@
 package blackjack;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Iterator;
 import blackjack.Card;
 import blackjack.Suit;
 import blackjack.Rank;
@@ -55,15 +55,6 @@ public class Deck {
         }
     }
 
-    public Card draw() {
-        //top of deck is end of ArrayList
-        int last = this.getSize()-1;
-        Card card = this.getCard(last);
-        this.removeCard(last);
-
-        return card;
-    }
-
     public int getSize() {
         return this.deck.size();
     }
@@ -74,6 +65,21 @@ public class Deck {
 
     public void removeCard(int i) {
         this.deck.remove(i);
+    }
+    
+    public Card draw() {
+        //top of deck is end of ArrayList
+        int last = this.getSize()-1;
+        Card card = this.getCard(last);
+        this.removeCard(last);
+
+        return card;
+    }
+
+    public void shuffle() {
+        //iterate from the end of the List to the front
+        //at each index, swap with random other index
+        Collections.shuffle(this.deck);
     }
 
     public String toString() {

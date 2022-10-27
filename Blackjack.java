@@ -9,5 +9,11 @@ public class Blackjack {
         System.out.println("Drew card: " + card.toString());
         System.out.println("\nDeck:");
         System.out.println(deck.toString());
+        System.out.println("\nShuffled deck:");
+        deck.shuffle();
+        System.out.println(deck.toString());
+
+        card = deck.draw();
+        System.out.println("\nDrew card: \n" + card.toString());
     }
 }
