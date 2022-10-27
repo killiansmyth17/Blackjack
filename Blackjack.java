@@ -4,7 +4,7 @@ import blackjack.Card;
 public class Blackjack {
     public static void main(String args[]) {
         Deck deck = new Deck();
-        Card card = deck.draw();
+        Card card = deck.drawCard();
 
         System.out.println("Drew card: " + card.toString());
         System.out.println("\nDeck:");
@@ -13,7 +13,7 @@ public class Blackjack {
         deck.shuffle();
         System.out.println(deck.toString());
 
-        card = deck.draw();
+        card = deck.drawCard();
         System.out.println("\nDrew card: \n" + card.toString());
     }
 }
