@@ -8,17 +8,31 @@ import cards.Rank;
 //only Deck should be able to "spawn" cards
 //all cards should originate from a Deck
 public class Deck extends CardList {
-    
+    final private Suit[] allSuits = Suit.values();
+    final private Rank[] allRanks = Rank.values();
+
+    //single deck constructor
     public Deck() {
         super();
 
-        final Suit[] allSuits = Suit.values();
-        final Rank[] allRanks = Rank.values();
-
-        for(Suit suit : allSuits) {
-            for(Rank rank : allRanks) {
+        for(Suit suit : this.allSuits) {
+            for(Rank rank : this.allRanks) {
                 super.addCard(new Card(suit, rank));
             }
+        }
+    }
+
+    //multideck constructor
+    public Deck(int numDecks) {
+        super();
+
+        //create deck with numDecks decks (e.g. 6 decks for 6-deck blackjack)
+        for(int i = 0; i<numDecks; i++) {
+            for(Suit suit : this.allSuits) {
+                for(Rank rank : this.allRanks) {
+                    super.addCard(new Card(suit, rank));
+                }
+            } 
         }
     }
 

@@ -3,13 +3,11 @@ import cards.Hand;
 
 public class Blackjack {
     public static void main(String args[]) {
-        Deck deck = new Deck();
+        //6-deck blackjack
+        Deck deck = new Deck(6);
         deck.shuffle();
 
-        Hand hand = new Hand();
-        hand.addCard(deck.drawCard());
-
-        System.out.println(hand.toString());
-        
+        System.out.println(deck.toString());
+        System.out.println(deck.getSize());
     }
 }

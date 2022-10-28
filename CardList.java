@@ -28,6 +28,14 @@ public class CardList {
     public Card removeCard(int i) {
         return this.cards.remove(i);
     }
+
+    //Dump one CardList into another CardList
+    //The dumping CardList will be emptied into the receiving CardList
+    public void dumpCards(CardList cardlist) {
+        for(int i = 0; i<cardlist.getSize(); i++) {
+            this.addCard(cardlist.getCard(i));
+        }
+    }
     
     public Card drawCard() {
         //top of deck is end of ArrayList
