@@ -1,5 +1,5 @@
-import blackjack.Deck;
-import blackjack.Card;
+import cards.Deck;
+import cards.Card;
 
 public class Blackjack {
     public static void main(String args[]) {
@@ -15,5 +15,6 @@ public class Blackjack {
 
         card = deck.drawCard();
         System.out.println("\nDrew card: \n" + card.toString());
+        
     }
 }
