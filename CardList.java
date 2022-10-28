@@ -1,10 +1,10 @@
 //Base class for a "stack" of cards. Note that it makes more sense to store them in an ArrayList
 //rather than an actual stack data type
-package blackjack;
+package cards;
 
 import java.util.List;
 import java.util.ArrayList;
-import blackjack.Card;
+import cards.Card;
 
 public class CardList {
     private List<Card> cards;

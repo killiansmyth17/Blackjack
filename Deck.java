@@ -1,11 +1,11 @@
-package blackjack;
+package cards;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
-import blackjack.Card;
-import blackjack.Suit;
-import blackjack.Rank;
+import cards.Card;
+import cards.Suit;
+import cards.Rank;
 
 //only Deck should be able to "spawn" cards
 //all cards should originate from a Deck
