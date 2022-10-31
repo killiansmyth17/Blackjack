@@ -53,13 +53,19 @@ public class CardList {
         return this.cards;
     }
 
+    //specific card to String
+    public String toString(int i) {
+        return this.getCard(i).toString();
+    }
+
+    //whole deck to String
     public String toString() {
         String cardsString = "";
         int size = this.getSize();
         for(int i = 0; i<size-1; i++) {
-            cardsString+=this.getCard(i).toString() + "\n";
+            cardsString+=this.toString(i) + "\n";
         }
-        cardsString += this.getCard(size-1).toString();
+        cardsString += this.toString(size-1);
 
         return cardsString;
     }
