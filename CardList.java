@@ -21,6 +21,18 @@ public class CardList {
         return this.cards.get(i);
     }
 
+    public String getSuit(int i) {
+        return this.getCard(i).getSuit();
+    }
+
+    public String getRank(int i) {
+        return this.getCard(i).getRank();
+    }
+
+    public int getValue(int i) {
+        return this.getCard(i).getValue();
+    }
+
     public boolean addCard(Card card) {
         return this.cards.add(card);
     }
@@ -35,12 +47,6 @@ public class CardList {
         for(int i = 0; i<cardlist.getSize(); i++) {
             this.addCard(cardlist.getCard(i));
         }
-    }
-    
-    public Card drawCard() {
-        //top of deck is end of ArrayList
-        int last = this.getSize()-1;
-        return this.removeCard(last);
     }
 
     public List<Card> getCards() {

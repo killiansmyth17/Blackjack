@@ -36,6 +36,19 @@ public class Deck extends CardList {
         }
     }
 
+    //drawCard has optional boolean for printing the drawn card
+    public Card drawCard(boolean ... print) {
+        //top of stack is end of ArrayList
+        int last = this.getSize()-1;
+        Card card = this.removeCard(last);
+        
+        if(print.length>0 && print[0]) {
+            System.out.println(card.toString());
+        }
+        
+        return card;
+    }
+
     public void shuffle() {
         //iterate from the end of the List to the front
         //at each index, swap with random other index
